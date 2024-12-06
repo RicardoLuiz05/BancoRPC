@@ -9,16 +9,15 @@ import java.rmi.registry.Registry;
 public class AppBanco {
 
     public static void main(String[] args) throws RemoteException, MalformedURLException, AlreadyBoundException {
-
-        // Cria uma instância do serviço com.gugawag.rpc.banco.BancoServiceServer...
         BancoServiceIF bancoService = new BancoServiceServer();
 
-        // instanciando o registro
+        // Instanciando o registro
         Registry registry = LocateRegistry.createRegistry(1099);
 
-        // liga (bind) o serviço ao RMI Registry
+        // Ligando o serviço ao RMI Registry
         registry.rebind("BancoService", bancoService);
 
         System.out.println("Service de banco registrado ....");
+        System.out.println("Desenvolvido por Ricardo");
     }
 }
